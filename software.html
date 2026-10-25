@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow"><!-- preview only: remove at launch -->
+  <title>Software · Modellab</title>
+  <meta name="description" content="Open-source software from Modellab, Gebze Technical University: ANI-based free energies, conformer search and neural network potentials.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500;6..72,700&display=swap">
+  <link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="mast wrap" id="top">
+  <p class="mast-line"><span>Department of Chemistry</span><span>Gebze Technical University</span></p>
+  <p class="mast-name"><a href="index.html">Modellab</a></p>
+  <nav class="mast-nav" aria-label="Primary">
+    <ul>
+      <li><a href="index.html#home">Home</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#members">Members</a></li>
+      <li><a href="index.html#research">Research</a></li>
+      <li><a href="software.html" aria-current="page">Software</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+      <li><a href="tutorials.html">Tutorials</a></li>
+    </ul>
+  </nav>
+  <hr class="mast-rule" aria-hidden="true">
+</header>
+
+<main id="main" class="wrap">
+  <section class="page-head" aria-labelledby="sw-title">
+    <h1 id="sw-title">Software</h1>
+    <p>Open-source tools that accompany our papers, developed by Ömer Tayfuroğlu and co-workers in the group and hosted on GitHub. Each one is free to use; please cite the paper listed with it.</p>
+  </section>
+  <ol class="software">
+    <li class="tool-entry">
+      <figure class="focus-fig tool-fig"><img src="assets/figures/deepqm-ani-lie-jcim2022.jpg" alt="deepQM workflow: MD trajectories split into protein and ligand groups, ANI/LIE energies, and calculated versus experimental binding free energies with correlation 0.86" loading="lazy" width="643" height="372"><figcaption>Graphical abstract, <a href="https://doi.org/10.1021/acs.jcim.2c00601" rel="noopener">Akkus et al., <i>J. Chem. Inf. Model.</i> 2022</a>. <a href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener">CC BY 4.0</a>.</figcaption></figure>
+      <div class="tool-body">
+        <h2>deepQM <span class="tool-alias">ANI-LIE</span></h2>
+        <p>End-state binding free energies from MD trajectories. deepQM evaluates protein–ligand and ligand–solvent interaction energies with ANI-2x neural network potentials at roughly ωB97X/6-31G* accuracy and combines them in a linear interaction energy model. Works with GROMACS 2018+ and ASE.</p>
+        <p class="tool-cite">Cite: <a href="https://doi.org/10.1021/acs.jcim.2c00601" rel="noopener">Akkus et al., <i>J. Chem. Inf. Model.</i> 2022</a> · <a href="https://doi.org/10.1002/jcc.27022" rel="noopener">Temel et al., <i>J. Comput. Chem.</i> 2023</a></p>
+        <p class="tool-links"><a href="https://github.com/otayfuroglu/deepQM" rel="noopener">GitHub</a></p>
+      </div>
+    </li>
+    <li class="tool-entry">
+      <figure class="focus-fig tool-fig"><img src="assets/figures/deepconf-jcim2025.jpg" alt="DeepConf workflow: ANI-2x pre-optimisation, conformer generation, single-point energies, k-means clustering by RMSD and ANI-2x optimisation to global and local minima" loading="lazy" width="664" height="321"><figcaption>Graphical abstract, <a href="https://doi.org/10.1021/acs.jcim.4c02053" rel="noopener">Tayfuroglu et al., <i>J. Chem. Inf. Model.</i> 2025</a>. <a href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener">CC BY 4.0</a>.</figcaption></figure>
+      <div class="tool-body">
+        <h2>DeepConf</h2>
+        <p>Low-energy conformer search for small molecules. DeepConf generates conformers with RDKit, ranks and optimises them with ANI-family potentials, AIMNet2, NequIP models or Gaussian 16, and returns a small, representative set for docking and MD. ANI potentials reproduce bioactive conformations with a mean RMSD below 0.5 Å.</p>
+        <p class="tool-cite">Cite: <a href="https://doi.org/10.1021/acs.jcim.4c02053" rel="noopener">Tayfuroglu et al., <i>J. Chem. Inf. Model.</i> 2025</a></p>
+        <p class="tool-links"><a href="https://github.com/otayfuroglu/DeepConf" rel="noopener">GitHub</a><a href="https://doi.org/10.5281/zenodo.14908196" rel="noopener">Zenodo archive</a></p>
+      </div>
+    </li>
+    <li class="tool-entry">
+      <figure class="focus-fig tool-fig"><img src="assets/figures/nnp-workflow-jpcb2025.jpg" alt="deepPotential workflow: train two initial NequIP potentials on FreeSolv data, run NNP-based MD, compare the two models’ energies, send uncertain frames to single-point DFT and retrain until the MD runs for at least 1 ns" loading="lazy" width="646" height="398"><figcaption>Scheme 1, <a href="https://doi.org/10.1021/acs.jpcb.5c05891" rel="noopener">Mutlu et al., <i>J. Phys. Chem. B</i> 2025</a>. <a href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener">CC BY 4.0</a>.</figcaption></figure>
+      <div class="tool-body">
+        <h2>deepPotential</h2>
+        <p>Workflow for building data-efficient E(3)-equivariant NequIP potentials by active learning, used to reach DFT accuracy for gas-phase and implicit-water simulations and solvation free energies of FreeSolv molecules.</p>
+        <p class="tool-cite">Cite: <a href="https://doi.org/10.1021/acs.jpcb.5c05891" rel="noopener">Mutlu et al., <i>J. Phys. Chem. B</i> 2025</a></p>
+        <p class="tool-links"><a href="https://github.com/otayfuroglu/deepPotential" rel="noopener">GitHub</a><a href="https://doi.org/10.5281/zenodo.16894903" rel="noopener">Zenodo archive</a></p>
+      </div>
+    </li>
+    <li class="tool-entry">
+      <figure class="focus-fig tool-fig"><img src="assets/figures/irmof-hdnnp-langmuir2025.jpg" alt="IRMOF framework with adsorbed gas molecules, combining a neural network potential with a force field, and an adsorption–relaxation scheme alternating MD and GCMC steps" loading="lazy" width="578" height="230"><figcaption>Related work: graphical abstract, <a href="https://doi.org/10.1021/acs.langmuir.4c04578" rel="noopener">Tayfuroglu et al., <i>Langmuir</i> 2025</a>. <a href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener">CC BY 4.0</a>.</figcaption></figure>
+      <div class="tool-body">
+        <h2>deepMOF</h2>
+        <p>Pretrained neural network potentials for the IRMOF-<i>n</i> series (<i>n</i> = 1, 4, 6, 7, 10), for simulating thermal and mechanical behaviour of metal–organic frameworks at DFT accuracy.</p>
+        <p class="tool-cite">Cite: <a href="https://doi.org/10.1039/d1cp05973d" rel="noopener">Tayfuroglu et al., <i>Phys. Chem. Chem. Phys.</i> 2022</a> · See also: <a href="https://doi.org/10.1021/acs.langmuir.4c04578" rel="noopener">Tayfuroglu et al., <i>Langmuir</i> 2025</a></p>
+        <p class="tool-links"><a href="https://github.com/otayfuroglu/deepMOF" rel="noopener">GitHub</a></p>
+      </div>
+    </li>
+  </ol>
+</main>
+
+<footer class="wrap">
+  <div class="foot">
+    <p class="wordmark">Modellab</p>
+    <div class="row">
+      <p>Computational chemistry at Gebze Technical University · Led by Assoc. Prof. Abdulkadir Koçak</p>
+      <p class="links"><a href="publications.html">Publications</a><a href="software.html">Software</a><a href="tutorials.html">Tutorials</a><a href="#top">Back to top</a></p>
+    </div>
+    <p class="row">© 2026 Modellab, Department of Chemistry, Gebze Technical University</p>
+  </div>
+</footer>
+</body>
+</html>
